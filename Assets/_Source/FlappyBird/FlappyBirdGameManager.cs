@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -8,15 +7,15 @@ public class FlappyBirdGameManager : MonoBehaviour
 {
     public static FlappyBirdGameManager Instance;
 
-    [SerializeField] private GameObject wallPrefab; // Префаб стены
+    [SerializeField] private GameObject wallPrefab;
     [SerializeField] private GameObject player; 
-    [SerializeField] private Transform wallSpawnPoint; // Точка спавна стен
-    [SerializeField] private float spawnInterval = 2f; // Интервал между спавном стен
-    [SerializeField] private TextMeshProUGUI gameOverText; // Текст окончания игры
-    [SerializeField] private GameObject exitButton; // Кнопка выхода
+    [SerializeField] private Transform wallSpawnPoint;
+    [SerializeField] private float spawnInterval = 2f;
+    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private GameObject exitButton;
 
-    [SerializeField] private float minY = -2f; // Минимальное значение Y для спавна стен
-    [SerializeField] private float maxY = 2f;  // Максимальное значение Y для спавна стен
+    [SerializeField] private float minY = -2f;
+    [SerializeField] private float maxY = 2f;
 
     private int wallCount = 0;
     private int maxWalls = 10;
@@ -50,7 +49,7 @@ public class FlappyBirdGameManager : MonoBehaviour
         {
             if (gameActive)
             {
-                float randomY = Random.Range(minY, maxY);  // Генерируем случайное значение Y
+                float randomY = Random.Range(minY, maxY);
                 Vector3 spawnPosition = new Vector3(wallSpawnPoint.position.x, randomY, wallSpawnPoint.position.z);
                 Instantiate(wallPrefab, spawnPosition, Quaternion.identity);
                 wallCount++;
@@ -73,7 +72,6 @@ public class FlappyBirdGameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         exitButton.SetActive(true);
 
-        // Останавливаем движение игрока
         player.GetComponent<BirdController>().StopPlayerMovement();
     }
 

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WallMovement : MonoBehaviour
 {
-    [SerializeField] private float wallSpeed = 2f; // —корость движени€ стен
+    [SerializeField] private float wallSpeed = 2f;
 
     private void Update()
     {
@@ -13,7 +11,7 @@ public class WallMovement : MonoBehaviour
             transform.Translate(Vector3.left * wallSpeed * Time.deltaTime);
         }
 
-        if (transform.position.x < -10f) // ”ничтожаем стену, когда она уходит за пределы видимости
+        if (transform.position.x < -10f)
         {
             Destroy(gameObject);
         }

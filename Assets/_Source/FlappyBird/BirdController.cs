@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 5f; // Сила прыжка
-    [SerializeField] private LayerMask groundLayer; // Слой для определения земли, стен и потолка
+    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private bool isGameActive = true;
@@ -36,25 +36,25 @@ public class BirdController : MonoBehaviour
 
     private bool IsCollisionWithWallOrGround(int layer)
     {
-        return groundLayer == (groundLayer | (1 << layer)); // Проверяем, является ли объект на слое groundLayer
+        return groundLayer == (groundLayer | (1 << layer));
     }
 
     private void GameOver()
     {
         isGameActive = false;
-        FlappyBirdGameManager.Instance.RestartGame(); // Перезапуск через GameManager
+        FlappyBirdGameManager.Instance.RestartGame();
     }
 
     public void StopPlayerMovement()
     {
-        isGameActive = false;  // Останавливаем игру
-        rb.velocity = Vector2.zero;  // Останавливаем игрока
-        rb.isKinematic = true;  // Отключаем физику игрока
+        isGameActive = false;
+        rb.velocity = Vector2.zero;
+        rb.isKinematic = true;
     }
 
     public void ResumePlayerMovement()
     {
-        isGameActive = true; // Включаем игру после перезапуска
-        rb.isKinematic = false;  // Включаем физику
+        isGameActive = true;
+        rb.isKinematic = false;
     }
 }
