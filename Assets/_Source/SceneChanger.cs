@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class levelcontroler : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     public int scene;
     public void changescene()
