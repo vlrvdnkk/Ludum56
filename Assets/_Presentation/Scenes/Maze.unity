@@ -1839,7 +1839,7 @@ GameObject:
   - component: {fileID: 463284731}
   - component: {fileID: 463284730}
   - component: {fileID: 463284729}
-  - component: {fileID: 463284728}
+  - component: {fileID: 463284733}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1847,19 +1847,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &463284728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463284727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a78bf5602cd2f34ca51f73077337493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 1
 --- !u!114 &463284729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,9 +1891,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 463284728}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 463284733}
+        m_TargetAssemblyTypeName: ReturnFromHive, Assembly-CSharp
+        m_MethodName: CompleteHive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1973,6 +1960,20 @@ RectTransform:
   m_AnchoredPosition: {x: 890, y: 486}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &463284733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463284727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c57b69fbd5e39041936398260580f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 1
+  hiveKey: hive3
 --- !u!1 &466091607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,6 +4032,7 @@ MonoBehaviour:
   totalBonuses: 10
   winText: {fileID: 466091610}
   exitButton: {fileID: 463284727}
+  inputListener: {fileID: 1546938542}
 --- !u!1001 &1041936104
 PrefabInstance:
   m_ObjectHideFlags: 0
