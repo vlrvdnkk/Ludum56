@@ -11,8 +11,9 @@ public class FlappyBirdGameManager : MonoBehaviour
     [SerializeField] private GameObject player; 
     [SerializeField] private Transform wallSpawnPoint;
     [SerializeField] private float spawnInterval = 2f;
-    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private GameObject gameOverText;
     [SerializeField] private GameObject exitButton;
+    [SerializeField] private AudioClip winSound; // Добавляем поле для звука победы
 
     [SerializeField] private float minY = -2f;
     [SerializeField] private float maxY = 2f;
@@ -20,6 +21,7 @@ public class FlappyBirdGameManager : MonoBehaviour
     private int wallCount = 0;
     private int maxWalls = 10;
     private bool gameActive = true;
+    private AudioSource audioSource; // Добавляем поле для AudioSource
 
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class FlappyBirdGameManager : MonoBehaviour
         {
             Instance = this;
         }
+        audioSource = gameObject.AddComponent<AudioSource>(); // Инициализируем AudioSource
     }
 
     private void Start()
@@ -68,11 +71,20 @@ public class FlappyBirdGameManager : MonoBehaviour
     private void EndGame()
     {
         gameActive = false;
-        gameOverText.text = "You Win!";
         gameOverText.gameObject.SetActive(true);
         exitButton.SetActive(true);
 
         player.GetComponent<BirdController>().StopPlayerMovement();
+        PlayWinSound(); // Воспроизводим звук победы
+
+    }
+
+    private void PlayWinSound()
+    {
+        if (winSound != null)
+        {
+            audioSource.PlayOneShot(winSound); // Воспроизводим звук
+        }
     }
 
     public bool IsGameActive()
