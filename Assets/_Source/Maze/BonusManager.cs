@@ -8,6 +8,7 @@ public class BonusManager : MonoBehaviour
     [SerializeField] private int totalBonuses = 5;
     [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private GameObject exitButton;
+    [SerializeField] private InputListener inputListener;
 
     private int collectedBonuses = 0;
 
@@ -39,6 +40,6 @@ public class BonusManager : MonoBehaviour
     {
         winText.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        inputListener.gameObject.SetActive(false);
     }
 }
