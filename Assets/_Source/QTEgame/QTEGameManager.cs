@@ -8,8 +8,11 @@ public class QTEGameManager : MonoBehaviour
     public static QTEGameManager Instance;
 
     [SerializeField] private HoneycombController[] hives;
-    [SerializeField] private TextMeshProUGUI winText;
+    [SerializeField] private GameObject winText;
     [SerializeField] private GameObject exitButton;
+    [SerializeField] private AudioClip keyPressSound;
+    [SerializeField] private AudioClip WinSound;
+    private AudioSource audioSource;
     private int completedHives = 0;
     private bool gameOver = false;
     private char lastLetter;
@@ -27,6 +30,7 @@ public class QTEGameManager : MonoBehaviour
     {
         winText.gameObject.SetActive(false);
         exitButton.SetActive(false);
+        audioSource = gameObject.AddComponent<AudioSource>();
         InitializeGame();
     }
 
@@ -48,6 +52,24 @@ public class QTEGameManager : MonoBehaviour
         }
     }
 
+    private void PlayKeyPressSound()
+    {
+        if (keyPressSound != null)
+        {
+            audioSource.PlayOneShot(keyPressSound);
+        }
+    }
+
+    private void PlayWinSound()
+    {
+        if (WinSound != null)
+        {
+            audioSource.PlayOneShot(WinSound);
+        }
+    }
+
+
+
     private void ActivateNextHive()
     {
         if (hiveIndices.Count > 0)
@@ -59,6 +81,7 @@ public class QTEGameManager : MonoBehaviour
 
             char letter = GetRandomLetter();
             hives[hiveIndex].ActivateHive(letter);
+            PlayKeyPressSound(); // ¬оспроизведение звука при активации нового уль€
         }
         else
         {
@@ -100,6 +123,7 @@ public class QTEGameManager : MonoBehaviour
         gameOver = true;
         winText.gameObject.SetActive(true);
         exitButton.SetActive(true);
+        PlayWinSound(); // ¬оспроизведение звука при выводе победного текста
     }
 
     public void RestartGame()
