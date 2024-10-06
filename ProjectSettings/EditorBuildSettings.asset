@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Presentation/Scenes/FlyKiller.unity
     guid: 0c2afc45642d40046b4fcad4a8fa419c
+  - enabled: 1
+    path: Assets/_Presentation/Scenes/Maze.unity
+    guid: 9349cef90e6b181429686c46348a6bce
+  - enabled: 1
+    path: Assets/_Presentation/Scenes/QTEgame.unity
+    guid: 2fcdf430a02dfd249b235bc6381869a1
+  - enabled: 1
+    path: Assets/_Presentation/Scenes/SmokerGame.unity
+    guid: c8307ffd17619c143b5903f46131af6b
   m_configObjects: {}
