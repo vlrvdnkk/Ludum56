@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Presentation/Scenes/SmokerGame.unity
     guid: c8307ffd17619c143b5903f46131af6b
+  - enabled: 1
+    path: Assets/_Presentation/Scenes/CutSceneRebel.unity
+    guid: cbd9514423e17cd45a3911e5ce14ac94
   m_configObjects: {}
