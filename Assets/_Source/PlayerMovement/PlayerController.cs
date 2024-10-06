@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Метод для перемещения игрока
     private void Move(Vector2 direction)
     {
         movement = direction.normalized * moveSpeed;

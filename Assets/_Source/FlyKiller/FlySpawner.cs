@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject flyPrefab; // Префаб мухи
-    [SerializeField] private int flyCount = 10;    // Количество мух
-    [SerializeField] private float minX = -8f;     // Минимальная позиция по X для спавна
-    [SerializeField] private float maxX = 8f;      // Максимальная позиция по X для спавна
-    [SerializeField] private float minY = -4f;     // Минимальная позиция по Y для спавна
-    [SerializeField] private float maxY = 4f;      // Максимальная позиция по Y для спавна
+    [SerializeField] private GameObject flyPrefab;
+    [SerializeField] private int flyCount = 10;
+    [SerializeField] private float minX = -8f;
+    [SerializeField] private float maxX = 8f;
+    [SerializeField] private float minY = -4f;
+    [SerializeField] private float maxY = 4f;
 
     private void Start()
     {
