@@ -7,8 +7,11 @@ public class DragController : MonoBehaviour
     [SerializeField] private Transform[] pathPoints;     // Массив контрольных точек
     [SerializeField] private Transform endPoint;         // Конечная точка пути
     [SerializeField] private float allowedDistance = 0.5f; // Допустимое расстояние отклонения
-    [SerializeField] private TextMeshProUGUI completionText; // Текст завершения игры
-    [SerializeField] private GameObject exitButton;      // Кнопка выхода
+    [SerializeField] private GameObject completionText; // Текст завершения игры
+    [SerializeField] private GameObject exitButton;   // Кнопка выхода
+    [SerializeField] private GameObject Bee44;
+    [SerializeField] private AudioSource SmokeSound;
+    [SerializeField] private AudioSource Wow;
 
     private bool isDragging = false;                     // Флаг, указывающий на перетаскивание объекта
     private Vector3 startPosition;                       // Начальная позиция объекта
@@ -21,6 +24,7 @@ public class DragController : MonoBehaviour
         startPosition = startPoint.position;
         transform.position = startPosition;
         completionText.gameObject.SetActive(false);
+        Bee44.gameObject.SetActive(false);
         exitButton.SetActive(false);
     }
 
@@ -53,6 +57,7 @@ public class DragController : MonoBehaviour
             if (Vector3.Distance(transform.position, pathPoints[currentPointIndex].position) <= allowedDistance / 2)
             {
                 currentPointIndex++;
+                SmokeSound.Play();
 
                 // Если достигли последней точки, завершаем игру
                 if (currentPointIndex >= pathPoints.Length)
@@ -73,6 +78,7 @@ public class DragController : MonoBehaviour
         {
             isDragging = true;
             isOutOfBounds = false;
+            
         }
     }
 
@@ -101,7 +107,9 @@ public class DragController : MonoBehaviour
     {
         isDragging = false;  // Останавливаем перетаскивание
         completionText.gameObject.SetActive(true);  // Показываем текст завершения
+        Bee44.gameObject.SetActive(true);  // Показываем текст завершения
         exitButton.SetActive(true);  // Показываем кнопку выхода
+        Wow.Play();
     }
 
     private void OnDrawGizmos()
