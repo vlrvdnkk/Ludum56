@@ -26,12 +26,12 @@ public class HiveController : MonoBehaviour
         {
             if (isFinalHive && !CheckRequiredHives())
             {
-                interactionText.text = "You must complete all other hives first!";
+                interactionText.text = "The hive seems inactive..might check it later";
                 interactionText.gameObject.SetActive(true);
             }
             else
             {
-                interactionText.text = "Press E to enter";
+                interactionText.text = "Hey! I said do some honey!";
                 interactionText.gameObject.SetActive(true);
                 isPlayerInTrigger = true;
             }
