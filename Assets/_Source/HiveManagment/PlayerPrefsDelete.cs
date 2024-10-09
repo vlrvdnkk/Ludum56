@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerPrefsDelete : MonoBehaviour
 {
-    void Start()
+    public void Reset()
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
