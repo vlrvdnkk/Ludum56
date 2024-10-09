@@ -3551,6 +3551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b15de5af3e8ba646a798f3380996228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToDestroyMusic: 6
 --- !u!82 &1384647675
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5237,7 +5238,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 10
 --- !u!222 &1884928630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5294,10 +5295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -5345,7 +5346,6 @@ RectTransform:
   - {fileID: 288601332}
   - {fileID: 1048523183}
   - {fileID: 1999065835}
-  - {fileID: 1884928626}
   - {fileID: 899847213}
   - {fileID: 1951552369}
   - {fileID: 443983578}
@@ -5354,6 +5354,7 @@ RectTransform:
   - {fileID: 1884472299}
   - {fileID: 1462966071}
   - {fileID: 68009727}
+  - {fileID: 1884928626}
   - {fileID: 323927909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

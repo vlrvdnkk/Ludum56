@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6438819199280489944}
   - component: {fileID: 4078295677002768581}
-  - component: {fileID: 4189051231558743224}
+  - component: {fileID: 5767390486911729631}
   m_Layer: 6
   m_Name: WallUp
   m_TagString: Untagged
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4189051231558743224
-BoxCollider2D:
+--- !u!60 &5767390486911729631
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13482265, y: -0.3577989}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,9 +127,26 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4882243, y: 1.0783763}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22, y: -0.03}
+      - {x: 0.22, y: -0.9}
+      - {x: 0.06, y: -0.9}
+      - {x: 0.06, y: -0.03}
+      - {x: -0.049999997, y: -0.03}
+      - {x: -0.049999997, y: -0.01}
+      - {x: -0.08, y: -0.01}
+      - {x: -0.08, y: 0.11}
+      - {x: -0.049999997, y: 0.11}
+      - {x: -0.049999997, y: 0.14}
+      - {x: -0.049999997, y: 0.14}
+      - {x: 0.32, y: 0.14}
+      - {x: 0.32, y: 0.11}
+      - {x: 0.35, y: 0.11}
+      - {x: 0.35, y: 0}
+      - {x: 0.32, y: 0}
+      - {x: 0.32, y: -0.03}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5379378904703811544
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731020787955830302}
   - component: {fileID: 5397712494335448785}
-  - component: {fileID: 8275080723501639209}
+  - component: {fileID: 2388591678856730012}
   m_Layer: 6
   m_Name: WallDown
   m_TagString: Untagged
@@ -262,8 +279,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8275080723501639209
-BoxCollider2D:
+--- !u!60 &2388591678856730012
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -294,7 +311,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13482265, y: -0.3577989}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -304,6 +321,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4882243, y: 1.0783763}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22, y: -0.03}
+      - {x: 0.22, y: -0.9}
+      - {x: 0.06, y: -0.9}
+      - {x: 0.06, y: -0.03}
+      - {x: -0.049999997, y: -0.03}
+      - {x: -0.049999997, y: -0.01}
+      - {x: -0.08, y: -0.01}
+      - {x: -0.08, y: 0.11}
+      - {x: -0.049999997, y: 0.11}
+      - {x: -0.049999997, y: 0.14}
+      - {x: -0.049999997, y: 0.14}
+      - {x: 0.32, y: 0.14}
+      - {x: 0.32, y: 0.11}
+      - {x: 0.35, y: 0.11}
+      - {x: 0.35, y: 0}
+      - {x: 0.32, y: 0}
+      - {x: 0.32, y: -0.03}
+  m_UseDelaunayMesh: 0
